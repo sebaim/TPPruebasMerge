@@ -304,7 +304,7 @@ public class Lista<T> {
 
 		System.out.println(l);
 		System.out.println(l.remove(new Integer(500)));
-		l.push_front(new Integer(5));
+		l.push_front(new Integer(6));
 		System.out.println(l);
 
 	}
