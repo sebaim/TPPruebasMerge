@@ -298,9 +298,6 @@ public class Lista<T> {
 
 		l.push_front(new Integer(4));
 		l.push_back(new Integer(50));
-//		l.push_front(new Integer(500));
-//		l.push_front(new Integer(5000));
-//		l.push_back(new Integer(5));
 
 		System.out.println(l);
 		System.out.println(l.remove(new Integer(500)));
