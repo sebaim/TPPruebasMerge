@@ -297,6 +297,11 @@ public class Lista<T> {
 		Lista<Integer> l = new Lista<Integer>();
 
 		l.push_front(new Integer(4));
+		l.push_front(new Integer(5));
+		l.push_front(new Integer(6));
+		l.push_front(new Integer(7));
+		l.push_front(new Integer(8));
+		
 		l.push_back(new Integer(50));
 
 		System.out.println(l);
