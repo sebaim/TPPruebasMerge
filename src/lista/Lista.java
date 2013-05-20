@@ -126,9 +126,9 @@ public class Lista<T> {
 		}
 
 		// Lista vacia
-		if (lista == null){
-			
-			return false;
+		if (lista == null)
+		{
+				return false;
 		}
 		
 		// Se llego al final de lista sin encontrarlo
@@ -194,7 +194,6 @@ public class Lista<T> {
 	}
 
 	public int buscar(T dato) {
-
 		Nodo<T> aux = lista;
 		int i = 1;
 
@@ -218,7 +217,6 @@ public class Lista<T> {
 
 		Nodo<T> aux = lista;
 		int i = 1;
-
 		while (i < pos && aux != null) {
 
 			i++;
