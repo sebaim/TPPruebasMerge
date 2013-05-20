@@ -20,13 +20,16 @@ public class Lista<T> {
 		nuevo.setData(dato);
 		nuevo.setSiguiente(null);
 
-		if (lista == null)
+		if (lista == null) {
+
 			lista = nuevo;
 
-		else {
+		} else {
+
 			Nodo<T> aux = lista;
 			Nodo<T> ultimo = aux;
 			while (aux != null) {
+
 				ultimo = aux;
 				aux = aux.getSiguiente();
 			}
@@ -39,22 +42,25 @@ public class Lista<T> {
 	 */
 	public T pop_back() {
 
-		Nodo<T> aux2 = lista;
-		Nodo<T> ultimo = aux2;
+		Nodo<T> aux = lista;
+		Nodo<T> ultimo = aux;
 
-		while (aux2 != null && aux2.getSiguiente() != null) {
+		while (aux != null && aux.getSiguiente() != null) {
 
-			ultimo = aux2;
-			aux2 = aux2.getSiguiente();
+			ultimo = aux;
+			aux = aux.getSiguiente();
 		}
 
 		// Sin elementos
-		if (lista == null)
+		if (lista == null) {
+
 			return null;
-		
+		}
+
 		// Un solo elemento
-		if (aux2 == lista) {
-			T retorno = aux2.getData();
+		if (aux == lista) {
+
+			T retorno = aux.getData();
 			lista = null;
 			return retorno;
 		}
@@ -120,11 +126,11 @@ public class Lista<T> {
 		}
 
 		// Lista vacia
-		if (lista == null) {
-
+		if (lista == null){
+			
 			return false;
 		}
-
+		
 		// Se llego al final de lista sin encontrarlo
 		if (aux == null) {
 
@@ -135,8 +141,8 @@ public class Lista<T> {
 		if (dato.equals(aux.getData())) {
 
 			// si es el primero de la lista
-			if (ultimo == aux) {
-
+			if ( ultimo == aux) {
+			
 				lista = ultimo.getSiguiente();
 			} else {
 				ultimo.setSiguiente(aux.getSiguiente());
@@ -146,6 +152,41 @@ public class Lista<T> {
 
 		return false;
 	}
+
+	/*
+	 * invierte el orden de los elementos en la lista
+	 */
+	// public void reverse(){
+	//		
+	//			
+	// }
+
+	// insert(posición, dato )//insertar
+
+	/*
+	 * Eliminar por posición
+	 */
+	// public boolean erase(int pos){
+	//		
+	// Nodo<T> aux = lista;
+	// Nodo<T> anterior = aux;
+	// int i = 1;
+	//		
+	// while ( aux != null && i < pos){
+	//		
+	// i++;
+	// anterior = aux;
+	// aux = aux.getSiguiente();
+	// }
+	//		
+	// if ( i == pos && aux != null){
+	//			
+	// anterior.setSiguiente(aux.getSiguiente());
+	// return true;
+	// }
+	//		
+	// return false;
+	// }
 
 	public boolean empty() {
 
@@ -206,34 +247,34 @@ public class Lista<T> {
 
 		lista = null;
 	}
-
-	public T ver_primero() {
-
-		if (lista != null) {
-
+	
+	public T ver_primero(){
+		
+		if (lista != null){
+			
 			return lista.getData();
 		} else {
-
+			
 			return null;
 		}
 	}
-
-	public T ver_ultimo() {
-
+	
+	public T ver_ultimo(){
+		
 		Nodo<T> aux = lista;
 		Nodo<T> ultimo = aux;
-
-		while (aux != null) {
-
+		
+		while( aux != null ){
+		
 			ultimo = aux;
 			aux = aux.getSiguiente();
 		}
-
-		if (lista == null) {
-
+		
+		if (lista==null){
+			
 			return null;
 		}
-
+	
 		return ultimo.getData();
 	}
 
@@ -252,16 +293,16 @@ public class Lista<T> {
 	}
 
 	public static void main(String[] args) {
-		//
-		// Lista<Integer> l = new Lista<Integer>();
-		//
-		// l.push_front(new Integer(4));
-		// l.push_back(new Integer(50));
-		//
-		// System.out.println(l);
-		// System.out.println(l.remove(new Integer(500)));
-		// l.push_front(new Integer(5));
-		// System.out.println(l);
+
+		Lista<Integer> l = new Lista<Integer>();
+
+		l.push_front(new Integer(4));
+		l.push_back(new Integer(50));
+
+		System.out.println(l);
+		System.out.println(l.remove(new Integer(500)));
+		l.push_front(new Integer(6));
+		System.out.println(l);
 
 	}
 }
