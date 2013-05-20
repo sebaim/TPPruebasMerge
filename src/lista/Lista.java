@@ -6,7 +6,7 @@ public class Lista<T> {
 	private Nodo<T> ultimo;
 
 	public Lista() {
-
+		
 		lista = null;
 		ultimo = null;
 	}
@@ -20,16 +20,13 @@ public class Lista<T> {
 		nuevo.setData(dato);
 		nuevo.setSiguiente(null);
 
-		if (lista == null) {
-
+		if (lista == null)
 			lista = nuevo;
-
-		} else {
-
+		else {
 			Nodo<T> aux = lista;
 			Nodo<T> ultimo = aux;
+			
 			while (aux != null) {
-
 				ultimo = aux;
 				aux = aux.getSiguiente();
 			}
@@ -46,20 +43,17 @@ public class Lista<T> {
 		Nodo<T> ultimo = aux;
 
 		while (aux != null && aux.getSiguiente() != null) {
-
 			ultimo = aux;
 			aux = aux.getSiguiente();
 		}
 
 		// Sin elementos
-		if (lista == null) {
-
+		if (lista == null)
 			return null;
-		}
+		
 
 		// Un solo elemento
 		if (aux == lista) {
-
 			T retorno = aux.getData();
 			lista = null;
 			return retorno;
@@ -67,7 +61,6 @@ public class Lista<T> {
 
 		// Mas de un elemento
 		if (lista != null) {
-
 			T retorno = ultimo.getSiguiente().getData();
 			ultimo.setSiguiente(null);
 			return retorno;
@@ -80,18 +73,13 @@ public class Lista<T> {
 	 * Inserta un elemento al comienzo.
 	 */
 	public void push_front(T dato) {
-
 		Nodo<T> nuevo = new Nodo<T>();
 		nuevo.setData(dato);
 
-		if (lista == null) {
-
+		if (lista == null)
 			nuevo.setSiguiente(null);
-		} else {
-
+		else
 			nuevo.setSiguiente(lista);
-		}
-
 		lista = nuevo;
 	}
 
